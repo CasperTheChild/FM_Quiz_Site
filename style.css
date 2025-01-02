@@ -1,0 +1,642 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root, ::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /*      Colors      */
+
+    /*      Light Mode      */
+
+    --Background-Color: #F4F6FA;
+    --Secondary-Color: #FFFFFF;
+    --Background-Circle-Color: #ABC1E1;
+    --Text-Color: #313E51;
+
+    --Big-Circle-Color: #EDF1F9;
+
+    --Buttom-Color: #F4F6FA;
+
+    --Correct-Color: #26D782;
+    --Incorrect-Color: #EE5454;
+
+    --Submit-Button-Click-Color: #A729F5;
+
+    --Html-Background-Color: #FFF1E9;
+    --Css-Background-Color: #E0FDEF;
+    --Javascript-Background-Color: #EBF0FF;
+    --Accessibility-Background-Color: #F6E7FF;
+
+    /*      Font        */
+
+    font-size: 1px;
+    font-family: Rubik;
+
+    --Font-Weight-Medium: 500;
+    --Font-Weight-Regular: 300;
+    --Font-Style-Italic: italic;
+
+
+    /*      Display     */
+
+    --Display-Font-Size: 144rem;
+    --Display-Mobile-Font-Size: 88rem;
+
+    /*      HeadingL        */
+
+    --Heading-L-Font-Size: 64rem;
+    --Heading-L-Mobile-Font-Size: 40rem;
+
+    /*      HeadingM        */
+
+    --Heading-M-Font-Size: 36rem;
+    --Heading-M-Mobile-Font-Size: 20rem;
+
+    /*      HeadingS        */
+
+    --Heading-S-Font-Size: 28rem;
+    --Heading-S-Mobile-Font-Size: 18rem;
+
+    /*      Layout      */
+
+    --Mobile-Padding: 16rem 24rem;
+    --Tablet-Padding: 40rem 64rem;
+    --Desktop-Padding: 75rem 140rem;
+
+    --Mobile-Toplayout-Bottom-Margin: 39rem;
+    --Tablet-Toplayout-Bottom-Margin: 79rem;
+    --Desktop-Toplayout-Bottom-Margin: 85rem;
+
+    --Mobile-Switcher-Width: 32rem;
+    --Mobile-Switcher-Height: 20rem;
+    --Tablet-Switcher-Width: 48rem;
+    --Tablet-Switcher-Height: 28rem;
+
+    --Mobile-Switcher-Gap: 8rem;
+    --Tablet-Switcher-Gap: 16rem;
+
+    --Mobile-Switcher-Img-Icon: 16rem;
+    --Tablet-Switcher-Img-Icon: 24rem;
+
+    --Mobile-Square-Icon: 40rem;
+    --Tablet-Square-Icon: 56rem;
+
+    --Mobile-Square-Margin-Right: 16rem;
+    --Tablet-Square-Margin-Right: 24rem;
+
+    --Mobile-Square-Icon-Inner: 28.57rem;
+    --Tablet-Square-Icon-Inner: 40rem;
+
+    --Mobile-Circle: 12rem;
+    --Tablet-Circle: 20rem;
+
+    --Mobile-Upper-Down-Gap: 40rem;
+    --Tablet-Upper-Down-Gap: 64rem;
+    --Desktop-Upper-Down-Gap: 131rem;
+
+    --Mobile-WelcomeLittleMessage-Top-Margin: 16rem;
+    --Desktop-WelcomeLittleMessage-Top-Margin: 48rem;
+
+    --Mobile-Question-Line-Top-Margin: 24rem;
+    --Tablet-Question-Line-Top-Margin: 40rem;
+    --Desktop-Question-Line-Top-Margin: 164rem;
+    
+    --Mobile-Buttons-Gap: 12rem;
+    --Tablet-Buttons-Gap: 24rem;
+
+    --Mobile-Button-Padding: 12rem;
+    --Desktop-Button-Padding: 18rem;
+
+    --Mobile-Purple-Button-Height: 56rem;
+    --Tablet-Purple-Button-Height: 92rem;
+
+    --Mobile-Corner-Radius-Little: 6rem;
+    --Mobile-Corner-Radius-Big: 12rem;
+    --Tablet-Corner-Radius-Little: 12rem;
+    --Tablet-Corner-Radius-Big: 24rem;
+
+    --Mobile-Result-Box-Padding: 32rem;
+    --Tablet-Result-Box-Padding: 48rem;
+    
+    --Mobile-QuestionNumber-Margin-Bottom: 12rem;
+    --Tablet-QuestionNumber-Margin-Bottom: 27rem;
+
+    --Mobile-Sign-Img: 32rem;
+    --Tablet-Sign-Img: 40rem;
+    
+    --Mobile-ScoreSquare-Padding: 32rem;
+    --Tablet-ScoreSquare-Padding: 48rem;
+    
+    --Mobile-ScoreSquare-Bottom-Margin: 12rem;
+    --Tablet-ScoreSquare-Bottom-Margin: 32rem;
+
+    --Mobile-ScorePageTheme-Bottom-Margin: 16rem;
+    --Tablet-ScorePageTheme-Bottom-Margin: 40rem;
+}
+
+html[data-theme="dark"] {
+    --Background-Color: #3B4D66;
+    --Secondary-Color: #626C7F;
+    --Big-Circle-Color: #313E51;
+    --Text-Color: #FFFFFF;
+}
+
+    /*      Common      */
+
+:root * {
+    box-sizing: border-box;
+    
+    font-size: 18rem;
+    line-height: 1;
+
+    color: var(--Text-Color);
+}
+
+* {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+
+    font-weight: var(--Font-Weight-Medium);
+}
+
+body, main {
+    overflow: hidden;
+}
+
+    /*      Flex        */
+
+.Flex {
+    display: flex;
+    align-items: center;
+}
+
+.FlexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.FlexTwoEnds {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.GridColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.FlexColumn {     
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.FlexScorePage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.DisplayNone {
+    display: none
+}
+
+    /*      Font Types      */
+
+.Display {
+    font-size: var(--Display-Mobile-Font-Size);
+    margin-bottom: 16rem;
+}
+
+.HeadingL {
+    font-size: var(--Heading-L-Mobile-Font-Size);
+}
+
+.HeadingM {
+    font-size: var(--Heading-S-Mobile-Font-Size);
+}
+
+.HeadingS {
+    font-size: var(--Heading-S-Mobile-Font-Size);
+}
+
+.Regular {
+    font-weight: var(--Font-Weight-Regular);
+}
+
+.Italics {
+    font-style: var(--Font-Style-Italic);
+}
+
+    /*      Common      */
+
+body {
+    padding: var(--Mobile-Padding);
+
+    background-color: var(--Background-Color);
+}
+
+.BigCircle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    width: 977rem;
+    height: 977rem;
+
+    border-radius: 50%;
+    z-index: -1;
+    
+    background-color: var(--Big-Circle-Color);
+}
+
+#FirstCircle {
+    transform: translateX(-630rem) translateY(-190rem);
+}
+
+.LittleCircle {
+    width: 680rem;
+    height: 680rem;
+
+    border-radius: 50%;
+
+    background-color: var(--Background-Color);
+}
+
+#SecondCircle {
+    display: none;
+}
+
+.WelcomeMessageHeadingMargin {
+    margin-bottom: 8rem;
+}
+
+button {
+    border: 0;
+    outline: 0;
+
+    cursor: pointer;
+
+    background-color: var(--Secondary-Color);
+}
+
+button:focus {
+    outline: 0;
+}
+
+.HtmlBackgroundColor {
+    background-color: var(--Html-Background-Color) !important;
+}
+
+.CssBackgroundColor {
+    background-color: var(--Css-Background-Color) !important;
+}
+
+.JavaScripBackgroundColor {
+    background-color: var(--Javascript-Background-Color) !important;
+}
+
+.AccessibilityBackgroundColor {
+    background-color: var(--Accessibility-Background-Color) !important;
+}
+
+.Right {
+    flex-grow: 1 !important;
+}
+
+#PurpleLine {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 999rem;
+
+    background-color: var(--Submit-Button-Click-Color);
+}
+
+#SelectWarning {
+    margin: 0 auto;
+    gap: 16rem;
+}
+
+.Red {
+    color: var(--Incorrect-Color);
+}
+
+    /*      Mobile      */
+
+.TopLayout {
+    margin-bottom: var(--Mobile-Toplayout-Bottom-Margin);
+}
+
+.LeftButtonImage {
+    width: var(--Mobile-Square-Icon);
+    height: var(--Mobile-Square-Icon);
+    margin-right: var(--Mobile-Square-Margin-Right);
+
+    background-color: var(--Background-Color);
+}
+
+.BorderRadiusLittle {
+    border-radius: var(--Mobile-Corner-Radius-Little);
+}
+
+.BorderRadiusBig {
+    border-radius: var(--Mobile-Corner-Radius-Big);
+}
+
+.LeftButtonImage img {
+    width: var(--Mobile-Square-Icon-Inner); 
+    height: var(--Mobile-Square-Icon-Inner);
+}
+
+.RightTopLayoutModeSwitcher {
+    height: var(--Mobile-Square-Icon);
+    gap: var(--Mobile-Switcher-Gap);
+}
+
+.RightTopLayoutModeSwitcher img {
+    width: var(--Mobile-Switcher-Img-Icon);
+}
+
+#ColorSwitcher {
+    width: var(--Mobile-Switcher-Width);
+    height: var(--Mobile-Switcher-Height);
+
+    border-radius: calc(var(--Mobile-Switcher-Height) / 2);
+
+    background-color: var(--Submit-Button-Click-Color);
+}
+
+.ColorSwitcherCircle {
+    width: var(--Mobile-Circle);
+    height: var(--Mobile-Circle);
+
+    margin-top: 4rem;
+    margin-inline-start: 4rem;
+    margin-inline-end: 4rem;
+
+    border-radius: 50%;
+
+    background-color: var(--Buttom-Color);
+}
+
+#WelcomeLittleMessage {
+    margin-top: var(--Mobile-WelcomeLittleMessage-Top-Margin);
+}
+
+.InfoNButtonsGap {
+    gap: var(--Mobile-Upper-Down-Gap);
+}
+
+.ButtonsGap {
+    gap: var(--Mobile-Buttons-Gap);
+}
+
+.FourButtons {
+    padding: var(--Mobile-Button-Padding);
+}
+
+.ValidityIcons {
+    width: var(--Mobile-Sign-Img);
+}
+
+.MarginBottomQuestionNumber {
+    margin-bottom: var(--Mobile-QuestionNumber-Margin-Bottom);
+}
+
+#QuesitonNumberShower {
+    width: 100%;
+    height: 16rem;
+    padding: 4rem;
+
+    margin-top: var(--Mobile-Question-Line-Top-Margin);
+
+    border-radius: 999rem;
+
+    background-color: var(--Secondary-Color);
+}
+
+.SubmitButton {
+    width: 100%;
+    height: var(--Mobile-Purple-Button-Height);
+
+    background-color: var(--Submit-Button-Click-Color);
+    color: var(--Buttom-Color);
+}
+
+.ScoreBoard {
+    padding: var(--Mobile-ScoreSquare-Padding);
+    margin-bottom: var(--Mobile-ScoreSquare-Bottom-Margin);
+
+    background-color: var(--Secondary-Color);
+}
+
+.ScoreIcons {
+    margin-bottom: var(--Mobile-ScorePageTheme-Bottom-Margin);
+}
+
+    /*      Pseudo-class      */
+
+#ColorSwitcher.NightMode .ColorSwitcherCircle {
+    margin-left: auto;
+}
+
+button.hover-enabled:hover .LeftButtonImage {
+    background-color: var(--Accessibility-Background-Color);
+    color: var(--Submit-Button-Click-Color) !important;
+}
+
+#SubmitButton:hover {
+    background-color: var(--Accessibility-Background-Color);
+}
+
+button.active-enabled:active {
+    transform: scale(0.99);
+}
+
+button.Active {
+    border: 3.5rem solid var(--Submit-Button-Click-Color);
+}
+
+button.Active .LeftButtonImage {
+    background-color: var(--Submit-Button-Click-Color);
+    color: var(--Buttom-Color);
+}
+
+button.Correct {    /*      Correct         */
+    border: 3.5rem solid var(--Correct-Color);
+}
+
+button.Correct .LeftButtonImage {
+    background-color: var(--Correct-Color);
+    color: var(--Buttom-Color);
+}
+
+button.Correct .CorrectIcon {
+    display: block;
+}
+
+button.InCorrect {    /*      InCorrect         */
+    border: 3.5rem solid var(--Incorrect-Color);
+}
+
+button.InCorrect .LeftButtonImage {
+    background-color: var(--Incorrect-Color);
+    color: var(--Buttom-Color);
+}
+
+button.InCorrect .InCorrectIcon {
+    display: block;
+}
+
+button.InCorrectCorrect .CorrectIcon {
+    display: block;
+}
+
+    /*      Media       */
+
+@media (min-width: 500px) {
+    #FirstCircle {
+        transform: translateX(-630rem) translateY(-535rem);
+    }
+
+    body {
+        padding: var(--Tablet-Padding);
+    }
+    
+    .TopLayout {
+        margin-bottom: var(--Tablet-Toplayout-Bottom-Margin);
+    }
+    
+    .LeftButtonImage {
+        width: var(--Tablet-Square-Icon);
+        height: var(--Tablet-Square-Icon);
+        margin-right: var(--Tablet-Square-Margin-Right);
+    }
+    
+    .BorderRadiusLittle {
+        border-radius: var(--Tablet-Corner-Radius-Little);
+    }
+    
+    .BorderRadiusBig {
+        border-radius: var(--Tablet-Corner-Radius-Big);
+    }
+    
+    .LeftButtonImage img {
+        width: var(--Tablet-Square-Icon-Inner); 
+        height: var(--Tablet-Square-Icon-Inner);
+    }
+    
+    .RightTopLayoutModeSwitcher {
+        height: var(--Tablet-Square-Icon);
+        gap: var(--Tablet-Switcher-Gap);
+    }
+    
+    .RightTopLayoutModeSwitcher img {
+        width: var(--Tablet-Switcher-Img-Icon);
+    }
+    
+    #ColorSwitcher {
+        width: var(--Tablet-Switcher-Width);
+        height: var(--Tablet-Switcher-Height);
+    
+        border-radius: calc(var(--Tablet-Switcher-Height) / 2);
+    }
+    
+    .ColorSwitcherCircle {
+        width: var(--Tablet-Circle);
+        height: var(--Tablet-Circle);
+    }
+    
+    .InfoNButtonsGap {
+        gap: var(--Tablet-Upper-Down-Gap);
+    }
+    
+    .ButtonsGap {
+        gap: var(--Tablet-Buttons-Gap);
+    }
+
+    .ValidityIcons {
+        width: var(--Tablet-Sign-Img);
+    }    
+    
+    .MarginBottomQuestionNumber {
+        margin-bottom: var(--Tablet-QuestionNumber-Margin-Bottom);
+    }
+    
+    #QuesitonNumberShower {
+        margin-top: var(--Tablet-Question-Line-Top-Margin);
+    }
+    
+    .SubmitButton {
+        height: var(--Tablet-Purple-Button-Height);
+    }
+    
+    .ScoreBoard {
+        padding: var(--Tablet-ScoreSquare-Padding);
+        margin-bottom: var(--Tablet-ScoreSquare-Bottom-Margin);
+    }
+    
+    .ScoreIcons {
+        margin-bottom: var(--Tablet-ScorePageTheme-Bottom-Margin);
+    }
+
+        /*      Fonts       */
+
+    .Display {
+        font-size: var(--Display-Font-Size);
+    }
+    
+    .HeadingL {
+        font-size: var(--Heading-L-Font-Size);
+    }
+    
+    .HeadingM {
+        font-size: var(--Heading-M-Font-Size);
+    }
+
+    .HeadingS {
+        font-size: var(--Heading-S-Font-Size);
+    }
+}
+
+@media (min-width: 1400px) {
+    body {
+        padding: var(--Desktop-Padding);
+    }
+
+    #SecondCircle {
+        display: flex;
+
+        transform: translateX(760rem) translateY(300rem);
+    }
+    
+    .FlexDesctop{
+        flex-direction: row !important;
+        gap: 131rem !important;
+    }
+
+    .TopLayout {
+        margin-bottom: var(--Desktop-Toplayout-Bottom-Margin);
+    }
+    
+    .InfoNButtonsGap {
+        gap: var(--Desktop-Upper-Down-Gap);
+    }
+    
+    #QuesitonNumberShower {
+        margin-top: var(--Desktop-Question-Line-Top-Margin);
+    }
+
+    .Left {
+        width: 40%;
+        max-width: 465rem;
+    }
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=10">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Frontend quiz app</title>
+
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="main.js"></script>
+</head>
+<body>
+
+<main>
+
+  <div id="FirstCircle" class="BigCircle"><div id="FirstInnerCircle"  class="LittleCircle"></div></div>
+  <div id="SecondCircle"  class="BigCircle"><div id="SecondInnerCircle"  class="LittleCircle"></div></div>
+
+  <section id="TopLayout" class="Flex FlexTwoEnds TopLayout">
+    <section id="QuestionThemeTopLayout" class="">
+      
+      <div id="TopLayoutHTML" class="TopLayoutIcons Flex DisplayNone">
+        <div class="LeftButtonImage FlexCenter BorderRadiusLittle HtmlBackgroundColor">
+          <img class="" src="./assets/images/icon-html.svg" alt="HtmlIcon">
+        </div>
+        <p id="QuestionThemeTopLayoutText" class="HeadingS">HTML</p>
+      </div>
+
+      <div id="TopLayoutCSS" class="TopLayoutIcons Flex DisplayNone">
+        <div class="LeftButtonImage FlexCenter BorderRadiusLittle CssBackgroundColor">
+          <img src="./assets/images/icon-css.svg" alt="CssIcon">
+        </div>
+        <span class="HeadingS">CSS</span>
+      </div>
+      
+      <div id="TopLayoutJavascript" class="TopLayoutIcons Flex DisplayNone">
+        <div class="LeftButtonImage FlexCenter BorderRadiusLittle JavaScripBackgroundColor">
+          <img class="" src="./assets/images/icon-js.svg" alt="JavaScriptIcon">
+        </div>
+        <p id="QuestionThemeTopLayoutText" class="HeadingS">JavaScript</p>
+      </div>
+      
+      <div id="TopLayoutAccessibility" class="TopLayoutIcons Flex DisplayNone">
+        <div class="LeftButtonImage FlexCenter BorderRadiusLittle AccessibilityBackgroundColor">
+          <img class="" src="./assets/images/icon-accessibility.svg" alt="AccessibilityIcon">
+        </div>
+        <span class="HeadingS">Accessibility</span>
+      </div>
+
+    </section>
+
+    <section id="RightTopLayoutModeSwitcher" class="Flex RightTopLayoutModeSwitcher">
+      <img id="LightIcon" class="LightIcon ModeIcon DisplayNone" src="./assets/images/icon-moon-light.svg" alt="MoonIcon">
+      <img id="DarkIcon" class="DarkIcon ModeIcon" src="./assets/images/icon-moon-dark.svg" alt="MoonIcon">
+      <div id="ColorSwitcher" class="">
+        <div id="ButtonCircle" class="ColorSwitcherCircle"></div>
+      </div>
+      <img id="LightIcon" class="LightIcon ModeIcon DisplayNone" src="./assets/images/icon-sun-light.svg" alt="SunIcon">
+      <img id="DarkIcon" class="DarkIcon ModeIcon" src="./assets/images/icon-sun-dark.svg" alt="SunIcon">
+    </section>
+  </section>
+
+  <!-- Quiz menu start -->
+
+  <section id="WelcomePage" class="FlexGrow FlexColumn InfoNButtonsGap FlexDesctop">
+    <section id="WelcomeWords" class="Left FlexColumn">
+      <span class="Regular HeadingL WelcomeMessageHeadingMargin">Welcome to the</span>
+      <br>
+      <span class="HeadingL">Frontend Quiz!</span>
+      <p id="WelcomeLittleMessage" class="LittleMessages HeadingS Italics Regular">Pick a subject to get started.</p>
+    </section>
+
+    <section class="Test Right FlexColumn ButtonsGap">
+      <button id="HtmlButton" class="ThemeButton FourButtons Flex BorderRadiusBig active-enabled">
+        <div class="LeftButtonImage FlexCenter BorderRadiusLittle HtmlBackgroundColor">
+          <img src="./assets/images/icon-html.svg" alt="HtmlIcon">  
+        </div>
+        <span class="HeadingS">HTML</span>
+      </button>
+
+      <button id="CssButton" class="ThemeButton FourButtons Flex BorderRadiusBig active-enabled">
+        <div class="LeftButtonImage FlexCenter BorderRadiusLittle CssBackgroundColor">
+          <img src="./assets/images/icon-css.svg" alt="CssIcon">
+        </div>
+        <span class="HeadingS">CSS</span>
+      </button>
+      
+      <button id="JavaScriptButton" class="ThemeButton FourButtons Flex BorderRadiusBig active-enabled">
+        <div class="LeftButtonImage FlexCenter BorderRadiusLittle JavaScripBackgroundColor">
+          <img class="" src="./assets/images/icon-js.svg" alt="JavaScriptIcon">
+        </div>
+        <span class="HeadingS">JavaScript</span>
+      </button>
+      
+      <button id="AccessibilityButton" class="ThemeButton FourButtons Flex BorderRadiusBig active-enabled">
+        <div class="LeftButtonImage FlexCenter BorderRadiusLittle AccessibilityBackgroundColor">
+          <img class="" src="./assets/images/icon-accessibility.svg" alt="AccessibilityIcon">
+        </div>
+        <soan class="HeadingS">Accessibility</span>
+      </button>
+    </section>
+  </section>
+
+  <!-- Quiz menu end -->
+
+  <!-- Quiz question start -->
+
+  <section id="QuestionPage" class="FlexDesctop FlexGrow FlexColumn InfoNButtonsGap DisplayNone">
+    <section class="Left">
+      <p class="LittleMessage HeadingM Italics Regular MarginBottomQuestionNumber">Question <span id="QuestionNumber" class="Regular HeadingM"></span> of <span id="OverallQuestionNumber" class="Regular HeadingM"></span></p>
+      <h2 id="Question" class="HeadingS"></h2>
+      <div id="QuesitonNumberShowerContainer">
+        <div id="QuesitonNumberShower"><div id="PurpleLine"></div></div>
+      </div>
+    </section>
+
+    <section class="Test Right FlexColumn ButtonsGap">
+      <button id="AnswerButtons" class="FourButtons Flex FlexTwoEnds BorderRadiusBig active-enabled">
+        <div class="LeftAnswerButton Flex">
+          <div id="AnswerSquare" class="LeftButtonImage FlexCenter HeadingS BorderRadiusLittle">A</div>
+          <span id="AnswerText" class="Answers HeadingS"></span>
+        </div>
+        <div id="AnswerResultIcons Flex">
+          <img class="ValidityIcons DisplayNone CorrectIcon" src="./assets/images/icon-correct.svg" alt="Correct Icon">
+          <img class="ValidityIcons DisplayNone InCorrectIcon" src="./assets/images/icon-incorrect.svg" alt="Incorrect Icon">
+        </div>
+      </button>
+
+      <button id="AnswerButtons" class="FourButtons Flex FlexTwoEnds BorderRadiusBig active-enabled">
+        <div class="LeftAnswerButton Flex">
+          <div id="AnswerSquare" class="LeftButtonImage FlexCenter HeadingS BorderRadiusLittle">B</div>
+          <span id="AnswerText" class="Answers HeadingS"></span>
+        </div>
+        <div id="AnswerResultIcons Flex">
+          <img class="ValidityIcons DisplayNone CorrectIcon" src="./assets/images/icon-correct.svg" alt="Correct Icon">
+          <img class="ValidityIcons DisplayNone InCorrectIcon" src="./assets/images/icon-incorrect.svg" alt="Incorrect Icon">
+        </div>
+      </button>
+
+      <button id="AnswerButtons" class="FourButtons Flex FlexTwoEnds BorderRadiusBig active-enabled">
+        <div class="LeftAnswerButton Flex">
+          <div id="AnswerSquare" class="LeftButtonImage FlexCenter HeadingS BorderRadiusLittle">C</div>
+          <span id="AnswerText" class="Answers HeadingS"></span>
+        </div>
+        <div id="AnswerResultIcons Flex">
+          <img class="ValidityIcons DisplayNone CorrectIcon" src="./assets/images/icon-correct.svg" alt="Correct Icon">
+          <img class="ValidityIcons DisplayNone InCorrectIcon" src="./assets/images/icon-incorrect.svg" alt="Incorrect Icon">
+        </div>
+      </button>
+      
+      <button id="AnswerButtons" class="FourButtons Flex FlexTwoEnds BorderRadiusBig active-enabled">
+        <div class="LeftAnswerButton Flex">
+          <div id="AnswerSquare" class="LeftButtonImage FlexCenter HeadingS BorderRadiusLittle">D</div>
+          <span id="AnswerText" class="Answers HeadingS"></span>
+        </div>
+        <div id="AnswerResultIcons Flex">
+          <img class="ValidityIcons DisplayNone CorrectIcon" src="./assets/images/icon-correct.svg" alt="Correct Icon">
+          <img class="ValidityIcons DisplayNone InCorrectIcon" src="./assets/images/icon-incorrect.svg" alt="Incorrect Icon">
+        </div>
+      </button>
+
+      <button id="SubmitButton" class="SubmitButton HeadingS BorderRadiusBig active-enabled">Submit answer</button>
+      
+      <button id="NextQuestion" class="SubmitButton HeadingS BorderRadiusBig active-enabled DisplayNone">Next Question</button>
+
+      <div id="SelectWarning" class="Flex DisplayNone">
+        <img class="ValidityIcons" src="./assets/images/icon-incorrect.svg" alt="Incorrect Icon">
+        <p class="HeadingS Regular Red">Please select an answer</p>
+      </div>
+    </section>
+  </section>
+
+  <!-- Quiz question end -->
+
+  <!-- Quiz completed start -->
+
+  <section id="ScorePage" class="FlexDesctop FlexGrow FlexColumn InfoNButtonsGap DisplayNone">
+    <section class="Left">
+      <span class="Regular HeadingL">Quiz completed</span>
+      <br>
+      <span class="HeadingL">You scored...</span>
+    </section>
+
+    <section class="Right">
+      <section class="ScoreBoard FlexScorePage BorderRadiusBig">
+
+        <div id="ScorePageHTML" class="ScoreIcons Flex DisplayNone">
+          <div class="LeftButtonImage FlexCenter BorderRadiusLittle HtmlBackgroundColor">
+            <img class="" src="./assets/images/icon-html.svg" alt="HtmlIcon">
+          </div>
+          <p id="QuestionThemeTopLayoutText" class="HeadingS">HTML</p>
+        </div>
+
+        <div id="ScorePageCSS" class="ScoreIcons Flex DisplayNone">
+          <div class="LeftButtonImage FlexCenter BorderRadiusLittle CssBackgroundColor">
+            <img src="./assets/images/icon-css.svg" alt="CssIcon">
+          </div>
+          <span class="HeadingS">CSS</span>
+        </div>
+  
+        <div id="ScorePageJavascript" class="ScoreIcons Flex DisplayNone">
+          <div class="LeftButtonImage FlexCenter BorderRadiusLittle JavaScripBackgroundColor">
+            <img class="" src="./assets/images/icon-js.svg" alt="JavaScriptIcon">
+          </div>
+          <p id="QuestionThemeTopLayoutText" class="HeadingS">JavaScript</p>
+        </div>
+
+        <div id="TopLayoutAccessibility" class="ScoreIcons Flex DisplayNone">
+          <div class="LeftButtonImage FlexCenter BorderRadiusLittle AccessibilityBackgroundColor">
+            <img class="" src="./assets/images/icon-accessibility.svg" alt="AccessibilityIcon">
+          </div>
+          <span class="HeadingS">Accessibility</span>
+        </div>
+        
+        <p id="ScoreNumber" class="Display">0</p>
+        
+        <p class="LittleMessageIcon HeadingM Regular"> out of <span id="OverallQuestionNumber" class="Regular HeadingM"></span></p>
+      </section>
+
+      <button id="PlayAgain" class="FourButtons SubmitButton HeadingS BorderRadiusBig active-enabled">Play Again</button>
+      </section>
+  </section>
+
+  <!-- Quiz completed end -->
+
+</main>
+
+</body>
+</html>
