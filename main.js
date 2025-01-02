@@ -268,7 +268,7 @@ function ClearIcons() {
 // Events
 
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("./data.json")
+    fetch("data.json")
         .then((response) => {
             if (!response.ok) {
                 throw new Error("Error loading data");
