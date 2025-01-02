@@ -91,25 +91,6 @@ function TopicClicked(i) {
     UpdateAnswers();
 }
 
-    // Updating data
-
-function UpdateData() {
-    return fetch("/data.json")
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error("Error loading data");
-            }
-            return response.json();
-        })
-        .then((InData) => {
-            data = InData;  // You're modifying `data` here
-        })
-        .catch((error) => {
-            console.error("Error fetching data: ", error);
-        });
-}
- 
-
     // Updating Question Page
 
 function UpdateQuestionPage() {
@@ -286,13 +267,27 @@ function ClearIcons() {
 
 // Events
 
-document.addEventListener("DOMContentLoaded", async () => {
-    await UpdateData();  // Wait for data to be loaded
-    if (!data) {
-        console.log("Data loading failed.");
-        return;
-    }
-    console.log("Event listeners are now active.");
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("/data.json")
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Error loading data");
+            }
+            return response.json();
+        })
+        .then((InData) => {
+            data = InData;  // You're modifying `data` here
+            
+            // Check for data after it has been fetched
+            if (!data) {
+                console.log("Data loading failed.");
+                return;
+            }
+            console.log("Event listeners are now active.");
+        })
+        .catch((error) => {
+            console.error("Error fetching data: ", error);
+        });
 });
 
 ColorSwitcher.addEventListener("click", toggleTheme);
