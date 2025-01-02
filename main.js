@@ -94,21 +94,20 @@ function TopicClicked(i) {
     // Updating data
 
 function UpdateData() {
-    fetch("/data.json")
+    return fetch("/data.json")
         .then((response) => {
             if (!response.ok) {
-                console.log("Error loading data");
-                return;
+                throw new Error("Error loading data");
             }
             return response.json();
         })
         .then((InData) => {
-            data = InData;
+            data = InData;  // You're modifying `data` here
         })
         .catch((error) => {
             console.error("Error fetching data: ", error);
         });
- }
+}
  
 
     // Updating Question Page
@@ -288,7 +287,7 @@ function ClearIcons() {
 // Events
 
 document.addEventListener("DOMContentLoaded", async () => {
-    UpdateData();
+    await UpdateData();  // Wait for data to be loaded
     if (!data) {
         console.log("Data loading failed.");
         return;
