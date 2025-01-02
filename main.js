@@ -288,7 +288,7 @@ function ClearIcons() {
 // Events
 
 document.addEventListener("DOMContentLoaded", async () => {
-    await UpdateData();  // Wait for data to be loaded
+    UpdateData();
     if (!data) {
         console.log("Data loading failed.");
         return;
