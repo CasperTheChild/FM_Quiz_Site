@@ -41,8 +41,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution URL](https://your-solution-url.com)
-- Live Site URL: [Live site URL](https://your-live-site-url.com)
+- Solution URL: [Solution URL](https://github.com/CasperTheChild/FM_Quiz_Site)
+- Live Site URL: [Live site URL](https://casperthechild.github.io/FM_Quiz_Site/)
 
 ## My process
 
