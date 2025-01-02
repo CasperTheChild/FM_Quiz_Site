@@ -13,7 +13,7 @@ const LightIcons = document.querySelectorAll("#LightIcon");
 
     // Choosing Topic
 
-let TopicIndex;
+let TopicIndex = 0;
 const QuestionTopics = document.querySelectorAll(".ThemeButton");   
 const TopLayoutTopics = document.querySelectorAll(".TopLayoutIcons");
 const ScoreIcons = document.querySelectorAll(".ScoreIcons");
@@ -96,15 +96,20 @@ function TopicClicked(i) {
 function UpdateData() {
     fetch("/data.json")
         .then((response) => {
-            if (!response.ok) return console.log("Oops. Something went wrong!")
-            
-            return response.json()
+            if (!response.ok) {
+                console.log("Error loading data");
+                return;
+            }
+            return response.json();
         })
-
         .then((InData) => {
-        data = InData;
-    })    
-}
+            data = InData;
+        })
+        .catch((error) => {
+            console.error("Error fetching data: ", error);
+        });
+ }
+ 
 
     // Updating Question Page
 
@@ -275,7 +280,6 @@ function ClearEverything() {
     UsersCorrectAnswerSum = 0;
 }
 
-
 function ClearIcons() {
     TopLayoutTopics[TopicIndex].classList.add("DisplayNone");
     ScoreIcons[TopicIndex].classList.add("DisplayNone");
@@ -284,7 +288,11 @@ function ClearIcons() {
 // Events
 
 document.addEventListener("DOMContentLoaded", async () => {
-    await UpdateData();
+    await UpdateData();  // Wait for data to be loaded
+    if (!data) {
+        console.log("Data loading failed.");
+        return;
+    }
     console.log("Event listeners are now active.");
 });
 
